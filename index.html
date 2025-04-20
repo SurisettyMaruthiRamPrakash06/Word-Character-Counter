@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word & Character Counter</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <main class="container">
+        <div class="header-container">
+            <h1>Word & Character Counter</h1>
+            <button id="theme-toggle" aria-label="Toggle dark mode">
+                <span class="theme-icon light">☀️</span>
+                <span class="theme-icon dark">🌙</span>
+            </button>
+        </div>
+        
+        <div class="counter-app">
+            <!-- Accessible textarea with label and placeholder -->
+            <label for="text-input" class="sr-only">Enter your text</label>
+            <textarea 
+                id="text-input" 
+                placeholder="Type or paste your text here..." 
+                aria-describedby="counter-stats"
+                aria-live="polite"
+            ></textarea>
+            
+            <!-- Counter statistics display -->
+            <div id="counter-stats" class="counter-stats">
+                <div class="stat-box">
+                    <span id="word-count">0</span>
+                    <p>Words</p>
+                </div>
+                <div class="stat-box">
+                    <span id="character-count">0</span>
+                    <p>Characters</p>
+                </div>
+                <div class="stat-box">
+                    <span id="sentence-count">0</span>
+                    <p>Sentences</p>
+                </div>
+                <div class="stat-box">
+                    <span id="paragraph-count">0</span>
+                    <p>Paragraphs</p>
+                </div>
+                <div class="stat-box">
+                    <span id="reading-time">0</span>
+                    <p>Min Read</p>
+                </div>
+            </div>
+
+            <!-- Action buttons -->
+            <div class="action-buttons">
+                <button id="clean-button" aria-label="Clean text">Clean Text</button>
+                <button id="download-button" aria-label="Download as text file">Download</button>
+                <button id="clear-button" aria-label="Clear text">Clear</button>
+            </div>
+
+            <!-- Chart for real-time tracking -->
+            <div class="chart-container">
+                <canvas id="stats-chart"></canvas>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Count words and characters in real-time as you type</p>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
